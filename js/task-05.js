@@ -1,17 +1,11 @@
-const inputField = document.querySelector('#name-input');
-const nameOutput = document.querySelector('#name-output');
+const inputFieldEl = document.querySelector('#name-input');
+inputFieldEl.value = '';
+const nameOutputEl = document.querySelector('#name-output');
 
-inputField.addEventListener('input', event => {
-  if (inputField.textContent == 'null') {
-    nameOutput.textContent = `Anonymous`;
-    // console.log(inputField.textContent);
-    // console.log(nameOutput.textContent);
+inputFieldEl.addEventListener('input', event => {
+  if (inputFieldEl.value == '') {
+    nameOutputEl.textContent = 'Anonimous';
   } else {
-    nameOutput.textContent = event.currentTarget.value;
-    // console.log(inputField.textContent);
-    // console.log(nameOutput.textContent);
+    nameOutputEl.textContent = event.currentTarget.value;
   }
 });
-
-// console.log(inputField.textContent);
-// console.log(nameOutput.textContent);
