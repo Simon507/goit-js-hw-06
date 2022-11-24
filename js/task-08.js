@@ -6,10 +6,14 @@ loginformEl.addEventListener('submit', event => {
   const {
     elements: { email, password },
   } = event.currentTarget;
-  if (email.value === '' || password.value === '') {
+  if (!email.value || !password.value) {
     return alert('Усі поля чекають заповнення!');
+  } else {
+    const registeredUser = {
+      email: email.value,
+      password: password.value,
+    };
+    console.log(registeredUser);
+    event.currentTarget.reset();
   }
-
-  console.log(`Email: ${email.value}, Password: ${password.value}`);
-  event.currentTarget.reset();
 });
